@@ -1,0 +1,32 @@
+GOD04 PRONOS — fichiers prêts à publier
+
+IMPORTANT
+- Les pronostics sont des estimations statistiques, pas des garanties.
+- La clé API ne doit jamais être écrite dans le code ni publiée.
+- Les compétitions disponibles dépendent de votre compte football-data.org.
+
+LE PLUS SIMPLE POUR INSTALLER
+1. Ouvrez votre dépôt : https://github.com/avonyogodwin9-jpg/GOD04-PRONOS
+2. Dans le dépôt, utilisez « Ajouter un fichier » > « Téléverser des fichiers ».
+3. Depuis votre ordinateur, ouvrez ce dossier extrait et envoyez les fichiers qu'il contient à la racine du dépôt.
+4. Veillez à conserver le chemin .github/workflows/update.yml. Si l'interface web ne permet pas d'envoyer le dossier .github, créez ce fichier directement dans GitHub avec « Ajouter un fichier » > « Créer un fichier », et saisissez comme nom :
+   .github/workflows/update.yml
+   Puis copiez le contenu du fichier update.yml présent dans ce dossier.
+5. Dans Settings > Secrets and variables > Actions > New repository secret :
+   Name : FOOTBALL_DATA_TOKEN
+   Secret : votre jeton football-data.org.
+6. Dans Settings > Pages, choisissez « GitHub Actions » comme source de publication.
+7. Dans l'onglet Actions, ouvrez « Actualiser et publier GOD04 PRONOS » et cliquez « Run workflow ».
+8. Après une exécution réussie, votre site sera à :
+   https://avonyogodwin9-jpg.github.io/GOD04-PRONOS/
+
+Si vous ne voyez pas l'onglet Actions, ouvrez directement :
+https://github.com/avonyogodwin9-jpg/GOD04-PRONOS/actions
+
+Fichiers
+- index.html : la page du site
+- update_data.py : récupère les matchs et calcule un score exact indicatif
+- data/matches.json : données affichées par le site
+- .github/workflows/update.yml : mise à jour et publication automatiques
+
+Le script utilise football-data.org. Une clé valide est requise. L'accès gratuit peut ne pas inclure toutes les ligues.

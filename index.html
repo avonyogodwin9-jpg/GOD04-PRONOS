@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="GOD04 PRONOS — analyses et pronostics de football.">
+<title>GOD04 PRONOS | Pronostics Football</title>
+<style>
+:root{--bg:#07111f;--panel:#101f33;--panel2:#142943;--blue:#1688ff;--cyan:#42d8ff;--text:#f4f8ff;--muted:#9db0c8;--line:#263b55;--green:#31d49a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top,#102e50 0%,var(--bg) 55%);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.5}
+a{color:inherit;text-decoration:none}.wrap{width:min(1120px,92%);margin:auto}
+header{position:sticky;top:0;z-index:5;background:rgba(7,17,31,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:15px 0}.brand{font-weight:900;letter-spacing:1px;font-size:1.15rem}.brand span{color:var(--cyan)}nav{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:.93rem}nav a:hover{color:white}
+.hero{padding:72px 0 48px;display:grid;grid-template-columns:1.25fr .75fr;gap:28px;align-items:center}.eyebrow{color:var(--cyan);font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:.78rem}
+h1{font-size:clamp(2.5rem,7vw,5rem);line-height:.98;letter-spacing:-2px;margin:12px 0 20px}h1 span{color:var(--cyan)}.lead{max-width:620px;color:var(--muted);font-size:1.08rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{display:inline-block;border:0;border-radius:12px;padding:12px 18px;font-weight:800;background:linear-gradient(110deg,var(--blue),var(--cyan));color:#04101d;cursor:pointer}.btn.secondary{background:transparent;border:1px solid #3c5a7b;color:var(--text)}
+.hero-card{border:1px solid #2a5278;border-radius:24px;padding:24px;background:linear-gradient(145deg,rgba(22,136,255,.18),rgba(20,41,67,.82));box-shadow:0 20px 70px #0004}.hero-card .big{font-size:3rem;font-weight:900;color:var(--cyan);line-height:1}.hero-card p{color:var(--muted)}.mini-stat{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:12px 0;color:var(--muted)}.mini-stat strong{color:var(--text)}
+section{padding:36px 0 48px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:20px}.section-head h2{margin:0;font-size:clamp(1.7rem,4vw,2.4rem)}.section-head p{margin:5px 0 0;color:var(--muted)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 20px}.filter{border:1px solid var(--line);background:var(--panel);color:var(--muted);padding:8px 13px;border-radius:999px;cursor:pointer}.filter.active{background:var(--blue);color:white;border-color:var(--blue)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.match{background:linear-gradient(160deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:18px;transition:.2s}.match:hover{transform:translateY(-3px);border-color:#347ab5}.league{font-size:.75rem;color:var(--cyan);font-weight:800;text-transform:uppercase;letter-spacing:1px}.teams{font-weight:800;font-size:1.05rem;margin:14px 0 12px}.versus{color:var(--muted);font-size:.8rem;margin:0 6px}.match-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:13px;gap:8px}.score{font-size:1.4rem;font-weight:900;color:var(--green)}.tag{font-size:.75rem;border-radius:7px;background:#203a55;color:#d9e9ff;padding:5px 8px}.note{font-size:.82rem;color:var(--muted);margin:12px 0 0}
+.empty{display:none;padding:28px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:16px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}.info{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:22px}.info h3{margin-top:0}.info p{color:var(--muted)}.contact-link{display:inline-block;margin-top:8px;color:var(--cyan);font-weight:800}
+footer{border-top:1px solid var(--line);padding:24px 0 35px;color:var(--muted);font-size:.85rem}.footer-row{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.disclaimer{border-left:3px solid #f4bc4f;padding:10px 13px;background:#2b261a;color:#ead9b0;border-radius:0 8px 8px 0;font-size:.84rem;margin-top:20px}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:48px}.grid{grid-template-columns:repeat(2,1fr)}nav{gap:10px;font-size:.85rem}}
+@media(max-width:560px){.nav{align-items:flex-start;flex-direction:column;gap:10px}nav{width:100%;justify-content:space-between}.grid,.two-col{grid-template-columns:1fr}.hero{padding-top:36px}.hero-card{padding:20px}.section-head{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#accueil">GOD04 <span>PRONOS</span></a>
+    <nav aria-label="Navigation principale">
+      <a href="#accueil">Accueil</a><a href="#pronostics">Pronostics</a><a href="#resultats">Résultats</a><a href="#apropos">À propos</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="wrap hero" id="accueil">
+    <div>
+      <div class="eyebrow">Le football • Les analyses • Les scores</div>
+      <h1>Lis le match.<br><span>Anticipe le jeu.</span></h1>
+      <p class="lead">Bienvenue sur GOD04 PRONOS, ton espace de pronostics football. Consulte les exemples de scores, compare les affiches et reviens pour les prochaines analyses.</p>
+      <div class="actions"><a class="btn" href="#pronostics">Voir les pronostics</a><a class="btn secondary" href="#apropos">Découvrir le site</a></div>
+    </div>
+    <aside class="hero-card">
+      <div class="eyebrow">GOD04 PRONOS</div>
+      <div class="big">MATCH DAY</div>
+      <p>Des analyses à consulter avant le coup d’envoi. Les scores affichés ci-dessous sont des exemples à remplacer par tes pronostics réels.</p>
+      <div class="mini-stat"><span>Accès</span><strong>100 % gratuit</strong></div>
+      <div class="mini-stat"><span>Format</span><strong>Mobile & ordinateur</strong></div>
+      <div class="mini-stat"><span>Zone</span><strong>Togo • International</strong></div>
+    </aside>
+  </div>
+
+  <section id="pronostics">
+    <div class="wrap">
+      <div class="section-head"><div><div class="eyebrow">Sélection</div><h2>Pronostics de football</h2><p>Exemples de présentation — remplace les équipes, dates et scores avant publication.</p></div></div>
+      <div class="filters" aria-label="Filtrer les pronostics">
+        <button class="filter active" data-filter="tous">Tous</button>
+        <button class="filter" data-filter="exact">Score exact</button>
+        <button class="filter" data-filter="1x2">1X2</button>
+      </div>
+      <div class="grid" id="match-grid">
+        <article class="match" data-type="exact">
+          <div class="league">Exemple • Match 1</div><div class="teams">Équipe A <span class="versus">vs</span> Équipe B</div>
+          <div class="match-bottom"><span class="tag">Score exact</span><span class="score">1 – 0</span></div>
+          <p class="note">À compléter : compétition, date et analyse.</p>
+        </article>
+        <article class="match" data-type="exact">
+          <div class="league">Exemple • Match 2</div><div class="teams">Équipe C <span class="versus">vs</span> Équipe D</div>
+          <div class="match-bottom"><span class="tag">Score exact</span><span class="score">2 – 0</span></div>
+          <p class="note">À compléter : compétition, date et analyse.</p>
+        </article>
+        <article class="match" data-type="exact">
+          <div class="league">Exemple • Match 3</div><div class="teams">Équipe E <span class="versus">vs</span> Équipe F</div>
+          <div class="match-bottom"><span class="tag">Score exact</span><span class="score">2 – 1</span></div>
+          <p class="note">À compléter : compétition, date et analyse.</p>
+        </article>
+        <article class="match" data-type="1x2">
+          <div class="league">Exemple • Match 4</div><div class="teams">Équipe G <span class="versus">vs</span> Équipe H</div>
+          <div class="match-bottom"><span class="tag">Pronostic 1X2</span><span class="score">1</span></div>
+          <p class="note">À compléter : compétition, date et analyse.</p>
+        </article>
+        <article class="match" data-type="1x2">
+          <div class="league">Exemple • Match 5</div><div class="teams">Équipe I <span class="versus">vs</span> Équipe J</div>
+          <div class="match-bottom"><span class="tag">Pronostic 1X2</span><span class="score">X</span></div>
+          <p class="note">À compléter : compétition, date et analyse.</p>
+        </article>
+        <article class="match" data-type="1x2">
+          <div class="league">Exemple • Match 6</div><div class="teams">Équipe K <span class="versus">vs</span> Équipe L</div>
+          <div class="match-bottom"><span class="tag">Pronostic 1X2</span><span class="score">2</span></div>
+          <p class="note">À compléter : compétition, date et analyse.</p>
+        </article>
+      </div>
+      <div class="empty" id="empty">Aucun pronostic dans cette catégorie.</div>
+      <div class="disclaimer">Important : les scores ci-dessus sont uniquement des exemples de maquette, pas des prédictions vérifiées ni des résultats garantis. Vérifie les matchs et les informations avant de publier.</div>
+    </div>
+  </section>
+
+  <section id="resultats">
+    <div class="wrap two-col">
+      <div class="info"><div class="eyebrow">Suivi</div><h2>Résultats</h2><p>Ajoute ici les résultats finaux des matchs et compare-les aux pronostics publiés. Mets à jour cette section après les rencontres.</p></div>
+      <div class="info"><div class="eyebrow">Notre méthode</div><h2>Analyses responsables</h2><p>Présente les statistiques, la forme récente et les absences connues quand tu disposes d’informations fiables. Un pronostic reste incertain : aucune victoire n’est garantie.</p></div>
+    </div>
+  </section>
+
+  <section id="apropos">
+    <div class="wrap info">
+      <div class="eyebrow">À propos</div><h2>Bienvenue chez GOD04 PRONOS</h2>
+      <p>GOD04 PRONOS partage des contenus autour du football : affiches, analyses et pronostics indicatifs. Le site est gratuit et ne propose pas d’espace VIP.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap info">
+      <div class="eyebrow">Restons en contact</div><h2>Contact</h2>
+      <p>Ajoute ici ton lien WhatsApp, ta page TikTok ou ton adresse de contact publique.</p>
+      <p><strong>WhatsApp :</strong> <span style="color:var(--muted)">Remplace ce texte par ton lien public</span></p>
+      <p><strong>TikTok :</strong> <span style="color:var(--muted)">Remplace ce texte par ton profil</span></p>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap footer-row"><span>© <span id="year"></span> GOD04 PRONOS</span><span>Site gratuit • Pronostics indicatifs</span></div></footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+const buttons = document.querySelectorAll('.filter');
+const cards = document.querySelectorAll('.match');
+const empty = document.getElementById('empty');
+buttons.forEach(button => button.addEventListener('click', () => {
+  buttons.forEach(b => b.classList.toggle('active', b === button));
+  const filter = button.dataset.filter;
+  let visible = 0;
+  cards.forEach(card => {
+    const show = filter === 'tous' || card.dataset.type === filter;
+    card.style.display = show ? '' : 'none';
+    if (show) visible++;
+  });
+  empty.style.display = visible ? 'none' : 'block';
+}));
+</script>
+</body>
+</html>
